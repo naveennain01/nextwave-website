@@ -1,99 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NextWave IT Services | Managed IT & Technical Support — Toronto</title>
-    <meta name="description" content="NextWave IT Services — Toronto managed IT, onsite technical support, and MSP services for small businesses across the GTA.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.nextwaveitservices.com/">
-    <link rel="stylesheet" href="style.css">
-
-    <meta property="og:title" content="NextWave IT Services — Toronto">
-    <meta property="og:description" content="Managed IT & onsite technical support for small businesses.">
-    <meta property="og:url" content="https://www.nextwaveitservices.com/">
-    <meta property="og:type" content="website">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NextWave IT Services | Managed IT & Support — Toronto</title>
+  <meta name="description" content="NextWave IT Services — Toronto managed IT, onsite technical support, and MSP services for small businesses across the GTA." />
+  <link rel="canonical" href="https://www.nextwaveitservices.com/" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
-    <!-- Navigation Bar -->
+  <header>
     <nav class="navbar">
-        <div class="logo-container">
-            <img src="assets/logo.jpg" alt="NextWave IT Services logo" class="logo-img">
-            <span class="logo-text">NextWave IT Services</span>
-        </div>
-
-        <div class="menu-toggle" id="mobile-menu">
-            &#9776;
-        </div>
-
-        <ul class="nav-links" id="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+      <div class="logo">
+        <img src="assets/logo.jpg" alt="NextWave IT Services Logo" />
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     </nav>
+  </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Reliable Managed IT Services in Toronto</h1>
-            <p>Your trusted partner for onsite IT support, network management, and cloud services.</p>
-            <a href="#contact" class="btn">Get Support</a>
-        </div>
-    </section>
+  <main class="content">
+    <h1>Welcome to NextWave IT Services</h1>
+    <p>We provide reliable Managed IT and Technical Support Services for Toronto businesses.</p>
+  </main>
 
-    <!-- Services Section -->
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Managed IT Support</h3>
-                <p>End-to-end IT management and helpdesk support for small and mid-sized businesses.</p>
-            </div>
-            <div class="service-card">
-                <h3>Onsite Technical Support</h3>
-                <p>Fast onsite visits to resolve computer, network, or server issues across the GTA.</p>
-            </div>
-            <div class="service-card">
-                <h3>Cloud & Backup Solutions</h3>
-                <p>Setup, migration, and management of Microsoft 365 and secure cloud backups.</p>
-            </div>
-            <div class="service-card">
-                <h3>Network Setup</h3>
-                <p>Design and installation of reliable wired and wireless networks for your office.</p>
-            </div>
-        </div>
-    </section>
+  <footer>
+    <p>© 2025 NextWave IT Services. All Rights Reserved.</p>
+  </footer>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Us</h2>
-        <p>NextWave IT Services is a Toronto-based Managed Service Provider (MSP) offering reliable, affordable IT solutions for small and mid-sized businesses. With over 10 years of industry experience, we deliver responsive support and expert technology management to keep your business running smoothly.</p>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: <a href="mailto:support@nextwaveitservices.com">support@nextwaveitservices.com</a></p>
-        <p>Phone: +1 (416) 555-1234</p>
-        <a href="mailto:support@nextwaveitservices.com" class="btn">Email Us</a>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 NextWave IT Services | Toronto, Canada</p>
-    </footer>
-
-    <!-- Mobile Menu Script -->
-    <script>
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = document.getElementById('nav-links');
-
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    </script>
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
