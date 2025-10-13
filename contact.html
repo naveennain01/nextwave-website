@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | NextWave IT Services — Toronto</title>
+  <meta name="description" content="Contact NextWave IT Services for managed IT and onsite technical support in Toronto. We're here to help your business stay connected and secure." />
+  <link rel="canonical" href="https://www.nextwaveitservices.com/contact.html" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="assets/logo.jpg" alt="NextWave IT Services Logo" />
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+  </header>
+
+  <main class="content">
+    <h1>Contact Us</h1>
+    <p>We’d love to hear from you! Reach out for service inquiries, partnerships, or general questions.</p>
+
+    <div class="contact-info">
+      <p><strong>Email:</strong> <a href="mailto:support@nextwaveitservices.com">support@nextwaveitservices.com</a></p>
+      <p><strong>Phone:</strong> (647) 555-0123</p>
+      <p><strong>Location:</strong> Toronto, Ontario, Canada</p>
+    </div>
+
+    <form class="contact-form" action="mailto:support@nextwaveitservices.com" method="POST" enctype="text/plain">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>© 2025 NextWave IT Services. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
