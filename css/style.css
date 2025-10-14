@@ -49,7 +49,7 @@ body {
   display: none;
   font-size: 1.8em;
   cursor: pointer;
-  color: #161b22;
+  color: #0078ff;
 }
 
 @media (max-width: 768px) {
@@ -90,7 +90,7 @@ body {
 
 h1,
 h2 {
-  color: #996A9E;
+  color: #58a6ff;
   margin-top: 0;
 }
 
