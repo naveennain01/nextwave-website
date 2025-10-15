@@ -2,165 +2,166 @@
    GLOBAL THEME COLORS
    ========================================================= */
 :root {
-    --gradient-start: #5B247A;  /* Deep Violet */
-    --gradient-end: #1BCEDF;    /* Bright Cyan */
-    --accent-gold: #FFD166;     /* Warm Gold Highlight */
-    --text-primary: #FFFFFF;    /* Primary White */
-    --text-secondary: rgba(255, 255, 255, 0.8);
-    --text-muted: rgba(255, 255, 255, 0.6);
-    --nav-bg: rgba(0, 0, 0, 0.3);
-    --nav-hover: var(--accent-gold);
-    --btn-primary: #1BCEDF;
-    --btn-hover: #16A6B8;
-    --bg-dark: #0d1117;
-    --border-line: #222;
+  --gradient-start: #5B247A;  /* Deep Violet */
+  --gradient-end: #1BCEDF;    /* Bright Cyan */
+  --accent-gold: #FFD166;     /* Warm Gold Highlight */
+  --text-primary: #FFFFFF;
+  --text-secondary: rgba(255, 255, 255, 0.8);
+  --text-muted: rgba(255, 255, 255, 0.6);
+  --btn-primary: #1BCEDF;
+  --btn-hover: #16A6B8;
+  --bg-dark: #0d1117;
+  --border-line: #222;
 }
 
 /* =========================================================
    BASE RESET
    ========================================================= */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* =========================================================
    GENERAL PAGE STYLES
    ========================================================= */
 body {
-    font-family: "Poppins", sans-serif;
-    background: linear-gradient(90deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-    color: var(--text-secondary);
-    line-height: 1.7;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(90deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 /* =========================================================
-   HEADER
+   HEADER / NAVBAR
    ========================================================= */
 header {
-    background: var(--nav-bg);
-    backdrop-filter: blur(6px);
-    padding: 20px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid var(--border-line);
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--border-line);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 50px;
+}
+
+/* Logo */
+.logo img {
+  height: 90px;
+  width: auto;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent-gold);
+  text-shadow: 0 0 8px rgba(255, 209, 102, 0.6);
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: var(--text-primary);
+  cursor: pointer;
+  user-select: none;
 }
 
 /* =========================================================
-   LOGO
-   ========================================================= */
-header .logo img {
-    height: 90px;
-    width: auto;
-}
-
-/* =========================================================
-   NAVBAR
-   ========================================================= */
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 40px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: var(--text-secondary);
-    font-weight: 600;
-    font-size: 18px;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: var(--nav-hover);
-    text-shadow: 0 0 8px rgba(255, 209, 102, 0.6);
-}
-
-/* =========================================================
-   HERO SECTION
+   HERO / BODY CONTENT
    ========================================================= */
 .hero {
-    text-align: center;
-    padding: 120px 20px;
-    color: var(--text-primary);
+  text-align: center;
+  padding: 120px 20px;
+  color: var(--text-primary);
 }
 
 .hero h1 {
-    font-size: 3rem;
-    color: var(--text-primary);
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    text-shadow: 0 0 15px rgba(27, 206, 223, 0.5);
+  font-size: 3rem;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 15px rgba(27, 206, 223, 0.5);
 }
 
 .hero p {
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* =========================================================
-   BUTTONS / HIGHLIGHTS
-   ========================================================= */
-button, .btn-primary {
-    background-color: var(--btn-primary);
-    color: var(--text-primary);
-    border: none;
-    padding: 12px 30px;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-button:hover, .btn-primary:hover {
-    background-color: var(--btn-hover);
-    box-shadow: 0 0 10px rgba(27, 206, 223, 0.4);
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 /* =========================================================
    FOOTER
    ========================================================= */
 footer {
-    background-color: var(--bg-dark);
-    color: var(--text-primary);
-    text-align: center;
-    padding: 25px;
-    margin-top: auto;
-    font-size: 14px;
-    border-top: 1px solid var(--border-line);
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  text-align: center;
+  padding: 25px;
+  margin-top: auto;
+  font-size: 14px;
+  border-top: 1px solid var(--border-line);
 }
 
 /* =========================================================
    RESPONSIVE DESIGN
    ========================================================= */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.85);
+    position: absolute;
+    top: 100px;
+    right: 30px;
+    padding: 20px 40px;
+    border-radius: 10px;
+    text-align: right;
+  }
 
-    nav ul {
-        flex-direction: column;
-        gap: 15px;
-        margin-top: 10px;
-    }
+  .nav-links.active {
+    display: flex;
+  }
 
-    header .logo img {
-        height: 70px;
-    }
+  .menu-toggle {
+    display: block;
+  }
 
-    .hero h1 {
-        font-size: 2.2rem;
-    }
+  .navbar {
+    padding: 15px 25px;
+  }
+
+  .logo img {
+    height: 70px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
 }
