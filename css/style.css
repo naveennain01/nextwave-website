@@ -1,24 +1,49 @@
-/* Base Reset */
+/* =========================================================
+   GLOBAL THEME COLORS
+   ========================================================= */
+:root {
+    --gradient-start: #5B247A;  /* Deep Violet */
+    --gradient-end: #1BCEDF;    /* Bright Cyan */
+    --accent-gold: #FFD166;     /* Warm Gold Highlight */
+    --text-primary: #FFFFFF;    /* Primary White */
+    --text-secondary: rgba(255, 255, 255, 0.8);
+    --text-muted: rgba(255, 255, 255, 0.6);
+    --nav-bg: rgba(0, 0, 0, 0.3);
+    --nav-hover: var(--accent-gold);
+    --btn-primary: #1BCEDF;
+    --btn-hover: #16A6B8;
+    --bg-dark: #0d1117;
+    --border-line: #222;
+}
+
+/* =========================================================
+   BASE RESET
+   ========================================================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* General Page Styles */
+/* =========================================================
+   GENERAL PAGE STYLES
+   ========================================================= */
 body {
     font-family: "Poppins", sans-serif;
-    background-color: #0d1117; /* Dark modern background */
-    color: #d0d0d0; /* Soft white text */
+    background: linear-gradient(90deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+    color: var(--text-secondary);
     line-height: 1.7;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-/* Header */
+/* =========================================================
+   HEADER
+   ========================================================= */
 header {
-    background-color: #0d1117; /* Match body background */
+    background: var(--nav-bg);
+    backdrop-filter: blur(6px);
     padding: 20px 50px;
     display: flex;
     justify-content: space-between;
@@ -26,16 +51,20 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid #222; /* subtle separator */
+    border-bottom: 1px solid var(--border-line);
 }
 
-/* Logo */
+/* =========================================================
+   LOGO
+   ========================================================= */
 header .logo img {
-    height: 90px; /* increased size */
+    height: 90px;
     width: auto;
 }
 
-/* Navbar */
+/* =========================================================
+   NAVBAR
+   ========================================================= */
 nav ul {
     list-style: none;
     display: flex;
@@ -44,46 +73,77 @@ nav ul {
 
 nav ul li a {
     text-decoration: none;
-    color: #b0b0b0; /* Light greyish text for visibility */
+    color: var(--text-secondary);
     font-weight: 600;
     font-size: 18px;
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #6c63ff; /* Accent purple on hover */
+    color: var(--nav-hover);
+    text-shadow: 0 0 8px rgba(255, 209, 102, 0.6);
 }
 
-/* Hero Section (for home page) */
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
 .hero {
     text-align: center;
-    padding: 100px 20px;
-    color: #ffffff;
+    padding: 120px 20px;
+    color: var(--text-primary);
 }
 
 .hero h1 {
     font-size: 3rem;
-    color: #ffffff;
+    color: var(--text-primary);
     margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 15px rgba(27, 206, 223, 0.5);
 }
 
 .hero p {
     font-size: 1.2rem;
-    color: #c8c8c8;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-/* Footer */
+/* =========================================================
+   BUTTONS / HIGHLIGHTS
+   ========================================================= */
+button, .btn-primary {
+    background-color: var(--btn-primary);
+    color: var(--text-primary);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:hover, .btn-primary:hover {
+    background-color: var(--btn-hover);
+    box-shadow: 0 0 10px rgba(27, 206, 223, 0.4);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
 footer {
-    background-color: #0d1117; /* Same as body */
-    color: #ffffff; /* Solid white for readability */
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
     text-align: center;
     padding: 25px;
     margin-top: auto;
     font-size: 14px;
-    border-top: 1px solid #222; /* subtle divider line */
+    border-top: 1px solid var(--border-line);
 }
 
-/* Responsive Design */
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -98,5 +158,9 @@ footer {
 
     header .logo img {
         height: 70px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
     }
 }
