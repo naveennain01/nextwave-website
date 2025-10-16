@@ -41,12 +41,8 @@ body {
    HEADER / NAVBAR
    ========================================================= */
 header {
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid var(--border-line);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  background-color: white; /* changed to white */
+  color: black; /* changed text color to black */
 }
 
 .navbar {
@@ -120,13 +116,9 @@ header {
    FOOTER
    ========================================================= */
 footer {
-  background-color: var(--bg-dark);
-  color: var(--text-primary);
-  text-align: center;
-  padding: 25px;
-  margin-top: auto;
-  font-size: 14px;
-  border-top: 1px solid var(--border-line);
+  background-color: white; /* changed to white */
+  color: black; /* changed text color to black */
+  position: static; /* changed from fixed so it appears only after scrolling */
 }
 
 /* =========================================================
