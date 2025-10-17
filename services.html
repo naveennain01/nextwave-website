@@ -7,6 +7,9 @@
   <meta name="description" content="Explore our managed IT services, onsite technical support, and network solutions for Toronto businesses." />
   <link rel="canonical" href="https://www.nextwaveitservices.com/services.html" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.jpg">
+  <link rel="apple-touch-icon" href="assets/favicon.jpg">
+  <meta name="theme-color" content="#0d1117">
 </head>
 <body>
   <header>
@@ -26,25 +29,116 @@
     </nav>
   </header>
 
-  <main class="content">
-    <h1>Our Services</h1>
-    <ul>
-      <li>Managed IT Support</li>
-      <li>Network Setup & Maintenance</li>
-      <li>Onsite Troubleshooting</li>
-      <li>Cloud & Data Backup</li>
-    </ul>
-  </main>
+<main class="content">
+  <section class="services-intro">
+    <h1>Services We Offer</h1>
+    <p>
+      Empowering Toronto businesses with reliable, proactive, and scalable IT solutions. 
+      We manage your technology so you can focus on growing your business.
+    </p>
+  </section>
+
+  <section class="services-grid">
+    <!-- Service 1 -->
+    <div class="service-card">
+      <img src="assets/icons/helpdesk.png" alt="Helpdesk Support" />
+      <h3>Helpdesk & End-User Support</h3>
+      <p>Responsive onsite and remote support for employees and devices — keeping your team productive every day.</p>
+    </div>
+
+    <!-- Service 2 -->
+    <div class="service-card">
+      <img src="assets/icons/rmm.png" alt="Remote Monitoring" />
+      <h3>Remote Monitoring & Management</h3>
+      <p>Proactive monitoring of servers, networks, and endpoints to prevent issues before they impact operations.</p>
+    </div>
+
+    <!-- Service 3 -->
+    <div class="service-card">
+      <img src="assets/icons/assets.png" alt="IT Asset Management" />
+      <h3>IT Asset & Lifecycle Management</h3>
+      <p>Procure, deploy, and manage hardware and software — ensuring systems stay current and cost-effective.</p>
+    </div>
+
+    <!-- Service 4 -->
+    <div class="service-card">
+      <img src="assets/icons/backup.png" alt="Backup and Recovery" />
+      <h3>Backup & Business Continuity</h3>
+      <p>Automated backups, secure recovery plans, and minimal downtime in case of disaster or outage.</p>
+    </div>
+
+    <!-- Service 5 -->
+    <div class="service-card">
+      <img src="assets/icons/cloud.png" alt="Cloud Services" />
+      <h3>Cloud Services & Management</h3>
+      <p>Migration and management of Azure, AWS, and M365 cloud solutions with optimized performance and cost.</p>
+    </div>
+
+    <!-- Service 6 -->
+    <div class="service-card">
+      <img src="assets/icons/network.png" alt="Network Management" />
+      <h3>Network & Infrastructure</h3>
+      <p>Reliable networking, firewall setup, and infrastructure support for seamless connectivity.</p>
+    </div>
+
+    <!-- Service 7 -->
+    <div class="service-card">
+      <img src="assets/icons/strategy.png" alt="IT Strategy" />
+      <h3>IT Strategy & Consulting</h3>
+      <p>We align your technology roadmap with business goals — enabling smarter, future-ready IT investments.</p>
+    </div>
+
+    <!-- Service 8 -->
+    <div class="service-card">
+      <img src="assets/icons/workplace.png" alt="Modern Workplace" />
+      <h3>Modern Workplace Solutions</h3>
+      <p>Empower your teams with Microsoft Teams, SharePoint, and secure remote work tools.</p>
+    </div>
+
+    <!-- Service 9 -->
+    <div class="service-card">
+      <img src="assets/icons/voice.png" alt="VoIP" />
+      <h3>Managed Voice Communications</h3>
+      <p>Reliable cloud VoIP, unified communications, and secure internet connectivity management.</p>
+    </div>
+
+    <!-- Service 10 -->
+    <div class="service-card">
+      <img src="assets/icons/m365.png" alt="Microsoft 365" />
+      <h3>Managed Microsoft 365 / Google Workspace</h3>
+      <p>Comprehensive setup, management, security, and training for your cloud productivity platforms.</p>
+    </div>
+
+    <!-- Service 11 -->
+    <div class="service-card">
+      <img src="assets/icons/vendor.png" alt="Vendor Management" />
+      <h3>Vendor Management & Procurement</h3>
+      <p>Single point of contact for all your IT vendors — simplifying billing and support.</p>
+    </div>
+  </section>
+</main>
+
 
   <footer>
     <p>© 2022 NextWave IT Services. All Rights Reserved.</p>
   </footer>
 
-  <script>
-    function toggleMenu() {
-      const navLinks = document.getElementById('navLinks');
-      navLinks.classList.toggle('active');
+ <script>
+  function toggleMenu() {
+    const navLinks = document.getElementById('navLinks');
+    navLinks.classList.toggle('active');
+  }
+
+  // Close menu when clicking outside of it
+  document.addEventListener('click', function (event) {
+    const navLinks = document.getElementById('navLinks');
+    const menuToggle = document.querySelector('.menu-toggle');
+
+    // If click is outside both navLinks and menuToggle, close the menu
+    if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+      navLinks.classList.remove('active');
     }
-  </script>
+  });
+</script>
 </body>
 </html>
