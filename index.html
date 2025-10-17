@@ -7,6 +7,9 @@
   <meta name="description" content="NextWave IT Services — Toronto managed IT, onsite technical support, and MSP services for small businesses across the GTA." />
   <link rel="canonical" href="https://www.nextwaveitservices.com/" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.jpg">
+  <link rel="apple-touch-icon" href="assets/favicon.jpg">
+  <meta name="theme-color" content="#0d1117">
 </head>
 <body>
   <header>
@@ -36,10 +39,23 @@
   </footer>
 
   <script>
-    function toggleMenu() {
-      const navLinks = document.getElementById('navLinks');
-      navLinks.classList.toggle('active');
+  function toggleMenu() {
+    const navLinks = document.getElementById('navLinks');
+    navLinks.classList.toggle('active');
+  }
+
+  // Close menu when clicking outside of it
+  document.addEventListener('click', function (event) {
+    const navLinks = document.getElementById('navLinks');
+    const menuToggle = document.querySelector('.menu-toggle');
+
+    // If click is outside both navLinks and menuToggle, close the menu
+    if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+      navLinks.classList.remove('active');
     }
+  });
+</script>
+
   </script>
 </body>
 </html>
