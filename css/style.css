@@ -64,7 +64,8 @@ header {
 /* Navigation Links */
 .nav-links {
   display: flex;
-  gap: 40px;
+  gap: 20px;
+  transition: all 0.3s ease;
 }
 
 .nav-links a {
@@ -224,19 +225,35 @@ footer {
    ========================================================= */
 @media (max-width: 768px) {
   .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: whitesmoke;
     position: absolute;
-    top: 70px;
-    right: 10px;
-    padding: 10px 20px;
-    border-radius: 1px;
-    text-align: right;
+    top: 70px; /* adjust if header height differs */
+    right: 0;
+    background-color: white;
+    flex-direction: column;
+    width: 150px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px 0 0 8px;
+    transition: all 0.4s ease;
   }
 
   .nav-links.active {
-    display: flex;
+    max-height: 400px;
+    opacity: 1;
+    padding: 10px 0;
+  }
+
+  .nav-links a {
+    color: black;
+    text-align: left;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
   }
 
   .menu-toggle {
@@ -255,3 +272,226 @@ footer {
     font-size: 2.2rem;
   }
 }
+
+/* =========================================================
+   SERVICES PAGE STYLING (CLEAN + RESPONSIVE)
+   ========================================================= */
+
+/* Section intro */
+.services-intro {
+  text-align: center;
+  padding: 60px 20px 30px;
+  background: linear-gradient(180deg, #f0f2f5 0%, #ffffff 100%);
+}
+
+.services-intro h1 {
+  color: #0d1117;
+  font-size: 2.4rem;
+  margin-bottom: 15px;
+}
+
+.services-intro p {
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Responsive grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  padding: 50px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Individual cards */
+.service-card {
+  background: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Card icons */
+.service-card img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 15px;
+}
+
+/* Card title + text */
+.service-card h3 {
+  color: #0d1117;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.service-card p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    padding: 30px 20px;
+  }
+
+  .service-card {
+    padding: 25px 15px;
+  }
+
+  .service-card img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .services-intro h1 {
+    font-size: 2rem;
+  }
+}
+/* =========================================================
+   About PAGE STYLING (CLEAN + RESPONSIVE)
+   ========================================================= */
+
+.about-content {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 0 20px;
+  line-height: 1.8;
+  color: whitesmoke;
+}
+
+.about-content h1, 
+.about-content h2 {
+  color: black;
+  margin-bottom: 15px;
+}
+
+.about-content p {
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+}
+
+.service-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.service-list li {
+  background: #83a9b4;
+  margin-bottom: 10px;
+  padding: 12px 15px;
+  border-left: 4px solid #0078d7;
+  border-radius: 6px;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .about-content {
+    padding: 0 15px;
+    margin: 60px auto;
+  }
+
+  .service-list li {
+    font-size: 0.95rem;
+  }
+}
+
+/* === Bottom About Sections === */
+.about-bottom {
+  margin-top: 60px;
+}
+
+.about-bottom section {
+  padding: 60px 20px;
+  text-align: center;
+  color: black;
+}
+
+.why-choose-us {
+  background-color: #f9fafb;
+  color: black;
+}
+
+.why-choose-us h2 {
+  color: black;
+  margin-bottom: 25px;
+}
+
+.why-choose-us ul {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.why-choose-us li {
+  background: #fff;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-left: 4px solid #0078d7;
+  border-radius: 6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.why-choose-us li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Vision and Commitment sections */
+
+.vision {
+  background-color: #eef3f9
+}
+
+.commitment {
+  background-color: #eef3f9;
+  color: black;
+}
+
+.vision h2, .commitment h2 {
+  color: #0d1117;
+  margin-bottom: 15px;
+}
+
+.vision p, .commitment p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: black;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-bottom section {
+    padding: 40px 15px;
+  }
+
+  .why-choose-us ul {
+    text-align: center;
+  }
+
+  .why-choose-us li {
+    font-size: 0.95rem;
+  }
+}
+
