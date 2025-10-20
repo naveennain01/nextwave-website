@@ -1,144 +1,709 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Services | NextWave IT Services — Toronto</title>
-  <meta name="description" content="Explore our managed IT services, onsite technical support, and network solutions for Toronto businesses." />
-  <link rel="canonical" href="https://www.nextwaveitservices.com/services.html" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.jpg">
-  <link rel="apple-touch-icon" href="assets/favicon.jpg">
-  <meta name="theme-color" content="#0d1117">
-</head>
-<body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <a href="index.html">
-        <img src="assets/logo.jpg" alt="NextWave IT Services Logo" />
-        </a>
-      </div>
-      <div class="nav-links" id="navLinks">
-        <a href="index.html">Home</a>
-        <a href="services.html" class="active">Services</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    </nav>
-  </header>
+/* =========================================================
+   GLOBAL THEME COLORS
+   ========================================================= */
+:root {
+  --gradient-start: #5B247A;  /* Deep Violet */
+  --gradient-end: #1BCEDF;    /* Bright Cyan */
+  --accent-gold: #FFD166;     /* Warm Gold Highlight */
+  --text-primary: #FFFFFF;
+  --text-secondary: rgba(255, 255, 255, 0.8);
+  --text-muted: rgba(255, 255, 255, 0.6);
+  --btn-primary: #1BCEDF;
+  --btn-hover: #16A6B8;
+  --bg-dark: #0d1117;
+  --border-line: #222;
+}
 
-<main class="content">
-  <section class="services-intro">
-    <h1>Services We Offer</h1>
-    <p>
-      Empowering Toronto businesses with reliable, proactive, and scalable IT solutions. 
-      We manage your technology so you can focus on growing your business.
-    </p>
-  </section>
+/* =========================================================
+   BASE RESET
+   ========================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <section class="services-grid">
-    <!-- Service 1 -->
-    <div class="service-card">
-      <img src="assets/icons/helpdesk.png" alt="Helpdesk Support" />
-      <h3>Helpdesk & End-User Support</h3>
-      <p>Responsive onsite and remote support for employees and devices — keeping your team productive every day.</p>
-    </div>
+/* =========================================================
+   GENERAL PAGE STYLES
+   ========================================================= */
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(90deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
 
-    <!-- Service 2 -->
-    <div class="service-card">
-      <img src="assets/icons/rmm.png" alt="Remote Monitoring" />
-      <h3>Remote Monitoring & Management</h3>
-      <p>Proactive monitoring of servers, networks, and endpoints to prevent issues before they impact operations.</p>
-    </div>
+/* =========================================================
+   HEADER / NAVBAR
+   ========================================================= */
+header {
+  background-color: white; /* changed to white */
+  color: black; /* changed text color to black */
+}
 
-    <!-- Service 3 -->
-    <div class="service-card">
-      <img src="assets/icons/assets.png" alt="IT Asset Management" />
-      <h3>IT Asset & Lifecycle Management</h3>
-      <p>Procure, deploy, and manage hardware and software — ensuring systems stay current and cost-effective.</p>
-    </div>
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 120px; /* Increased horizontal padding for center alignment */
+  max-width: 1200px; /* Keeps layout centered on large screens */
+  margin: 0 auto; /* Centers the navbar container itself */
+}
 
-    <!-- Service 4 -->
-    <div class="service-card">
-      <img src="assets/icons/backup.png" alt="Backup and Recovery" />
-      <h3>Backup & Business Continuity</h3>
-      <p>Automated backups, secure recovery plans, and minimal downtime in case of disaster or outage.</p>
-    </div>
+/* Logo */
+.logo img {
+  height: 90px;
+  width: auto;
+  margin-left: 20px; 
+}
 
-    <!-- Service 5 -->
-    <div class="service-card">
-      <img src="assets/icons/cloud.png" alt="Cloud Services" />
-      <h3>Cloud Services & Management</h3>
-      <p>Migration and management of Azure, AWS, and M365 cloud solutions with optimized performance and cost.</p>
-    </div>
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  transition: all 0.3s ease;
+}
 
-    <!-- Service 6 -->
-    <div class="service-card">
-      <img src="assets/icons/network.png" alt="Network Management" />
-      <h3>Network & Infrastructure</h3>
-      <p>Reliable networking, firewall setup, and infrastructure support for seamless connectivity.</p>
-    </div>
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  font-size: 18px;
+  transition: color 0.3s;
+}
 
-    <!-- Service 7 -->
-    <div class="service-card">
-      <img src="assets/icons/strategy.png" alt="IT Strategy" />
-      <h3>IT Strategy & Consulting</h3>
-      <p>We align your technology roadmap with business goals — enabling smarter, future-ready IT investments.</p>
-    </div>
+.nav-links a:hover,
+.nav-links a.active {
+  color: rgb(73, 143, 114);
+  text-shadow: 0 0 8px rgba(134, 154, 180, 0.6);
+}
 
-    <!-- Service 8 -->
-    <div class="service-card">
-      <img src="assets/icons/workplace.png" alt="Modern Workplace" />
-      <h3>Modern Workplace Solutions</h3>
-      <p>Empower your teams with Microsoft Teams, SharePoint, and secure remote work tools.</p>
-    </div>
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: black;
+  cursor: pointer;
+  user-select: none;
+}
 
-    <!-- Service 9 -->
-    <div class="service-card">
-      <img src="assets/icons/voice.png" alt="VoIP" />
-      <h3>Managed Voice Communications</h3>
-      <p>Reliable cloud VoIP, unified communications, and secure internet connectivity management.</p>
-    </div>
+/* =========================================================
+   HERO / BODY CONTENT
+   ========================================================= */
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+  color: var(--text-primary);
+}
 
-    <!-- Service 10 -->
-    <div class="service-card">
-      <img src="assets/icons/m365.png" alt="Microsoft 365" />
-      <h3>Managed Microsoft 365 / Google Workspace</h3>
-      <p>Comprehensive setup, management, security, and training for your cloud productivity platforms.</p>
-    </div>
+.hero h1 {
+  font-size: 3rem;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 15px rgba(27, 206, 223, 0.5);
+}
 
-    <!-- Service 11 -->
-    <div class="service-card">
-      <img src="assets/icons/vendor.png" alt="Vendor Management" />
-      <h3>Vendor Management & Procurement</h3>
-      <p>Single point of contact for all your IT vendors — simplifying billing and support.</p>
-    </div>
-  </section>
-</main>
+.hero p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin: 0 auto;
+}
 
+/* =========================================================
+   CONTACT PAGE
+   ========================================================= */
+.content {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+}
 
-  <footer>
-    <p>© 2022 NextWave IT Services. All Rights Reserved.</p>
-  </footer>
+.contact-info {
+  flex: 1 1 40%;
+  color: var(--text-secondary);
+}
 
- <script>
-  function toggleMenu() {
-    const navLinks = document.getElementById('navLinks');
-    navLinks.classList.toggle('active');
+.contact-info p {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.contact-info a {
+  color: var(--btn-primary);
+  text-decoration: none;
+}
+
+.contact-form {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.contact-form label {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px 15px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  font-size: 16px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--btn-primary);
+  box-shadow: 0 0 5px var(--btn-primary);
+}
+
+.contact-form button {
+  margin-top: 10px;
+  background-color: var(--btn-primary);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: var(--btn-hover);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    align-items: stretch;
   }
 
-  // Close menu when clicking outside of it
-  document.addEventListener('click', function (event) {
-    const navLinks = document.getElementById('navLinks');
-    const menuToggle = document.querySelector('.menu-toggle');
+  .contact-info,
+  .contact-form {
+    flex: 1 1 100%;
+  }
+}
 
-    // If click is outside both navLinks and menuToggle, close the menu
-    if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
-      navLinks.classList.remove('active');
-    }
-  });
-</script>
-</body>
-</html>
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+footer {
+  background-color: white; /* footer background white */
+  color: black; /* footer text black */
+  position: static; /* not fixed */
+  margin-top: 40px; /* space above footer */
+  padding: 40px 0; /* doubles height visually */
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px; /* adjust if header height differs */
+    right: 0;
+    background-color: white;
+    flex-direction: column;
+    width: 150px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px 0 0 8px;
+    transition: all 0.4s ease;
+  }
+
+  .nav-links.active {
+    max-height: 400px;
+    opacity: 1;
+    padding: 10px 0;
+  }
+
+  .nav-links a {
+    color: black;
+    text-align: left;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar {
+    padding: 15px 25px;
+  }
+
+  .logo img {
+    height: 70px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* =========================================================
+   SERVICES PAGE STYLING (CLEAN + RESPONSIVE)
+   ========================================================= */
+
+/* Section intro */
+.services-intro {
+  text-align: center;
+  padding: 60px 20px 30px;
+  background: linear-gradient(180deg, #f0f2f5 0%, #ffffff 100%);
+}
+
+.services-intro h1 {
+  color: #0d1117;
+  font-size: 2.4rem;
+  margin-bottom: 15px;
+}
+
+.services-intro p {
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Responsive grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  padding: 50px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Individual cards */
+.service-card {
+  background: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Card icons */
+.service-card img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 15px;
+}
+
+/* Card title + text */
+.service-card h3 {
+  color: #0d1117;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.service-card p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    padding: 30px 20px;
+  }
+
+  .service-card {
+    padding: 25px 15px;
+  }
+
+  .service-card img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .services-intro h1 {
+    font-size: 2rem;
+  }
+}
+/* =========================================================
+   About PAGE STYLING (CLEAN + RESPONSIVE)
+   ========================================================= */
+
+.about-content {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 0 20px;
+  line-height: 1.8;
+  color: whitesmoke;
+}
+
+.about-content h1, 
+.about-content h2 {
+  color: black;
+  margin-bottom: 15px;
+}
+
+.about-content p {
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+}
+
+.service-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.service-list li {
+  background: #83a9b4;
+  margin-bottom: 10px;
+  padding: 12px 15px;
+  border-left: 4px solid #0078d7;
+  border-radius: 6px;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .about-content {
+    padding: 0 15px;
+    margin: 60px auto;
+  }
+
+  .service-list li {
+    font-size: 0.95rem;
+  }
+}
+
+/* === Bottom About Sections === */
+.about-bottom {
+  margin-top: 60px;
+}
+
+.about-bottom section {
+  padding: 60px 20px;
+  text-align: center;
+  color: black;
+}
+
+.why-choose-us {
+  background-color: #f9fafb;
+  color: black;
+}
+
+.why-choose-us h2 {
+  color: black;
+  margin-bottom: 25px;
+}
+
+.why-choose-us ul {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.why-choose-us li {
+  background: #fff;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-left: 4px solid #0078d7;
+  border-radius: 6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.why-choose-us li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Vision and Commitment sections */
+
+.vision {
+  background-color: #eef3f9
+}
+
+.commitment {
+  background-color: #eef3f9;
+  color: black;
+}
+
+.vision h2, .commitment h2 {
+  color: #0d1117;
+  margin-bottom: 15px;
+}
+
+.vision p, .commitment p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: black;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-bottom section {
+    padding: 40px 15px;
+  }
+
+  .why-choose-us ul {
+    text-align: center;
+  }
+
+  .why-choose-us li {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* === ********************** /////////////////////HOME PAGE//////////////////////************* === */
+/* === HERO SECTION === */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('../assets/hero-bg.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 140px 20px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  line-height: 1.7;
+}
+
+.btn-primary {
+  background-color: #0078d7;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #005ea6;
+}
+
+/* === SERVICES HIGHLIGHT === */
+.home-services {
+  padding: 80px 20px;
+  background: #f9fafb;
+  text-align: center;
+}
+
+.home-services h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #0d1117;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.service-card img {
+  width: 100%;
+  height: 220px;             /* Fixed height for consistency */
+  object-fit: cover;         /* Prevents stretching */
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+
+.service-card h3 {
+  color: #0d1117;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 0.97rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.btn-container {
+  margin-top: 40px;
+}
+
+.btn-secondary {
+  color: #0078d7;
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid #0078d7;
+  padding: 10px 24px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #0078d7;
+  color: #fff;
+}
+
+/* === HOME ABOUT === */
+.home-about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1 1 500px;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  color: #0d1117;
+  margin-bottom: 15px;
+}
+
+.about-text p {
+  font-size: 1rem;
+  color: #e0c7c7;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.about-text ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.about-text li {
+  margin-bottom: 10px;
+}
+
+.about-image {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.about-image img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* === CTA BANNER === */
+.cta-banner {
+  background: #234c7c;
+  color: white;
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.cta-banner h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.cta-banner p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.cta-banner .btn-primary {
+  background: #fff;
+  color: #0078d7;
+}
+
+.cta-banner .btn-primary:hover {
+  background: #e6f1fc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    padding: 100px 15px;
+  }
+
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .home-about {
+    flex-direction: column;
+  }
+
+  .home-about img {
+    margin-top: 20px;
+  }
+}
+
